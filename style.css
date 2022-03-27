@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #f1bf52 60%, lightgrey 40%);
+    min-height: 100vh;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 20px;
+    margin: auto;
+}
+
+h1 {
+    background-color: black;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image-hotspot {
+    max-width: 550px;
+    margin: 50px auto 0 auto;
+    position: relative;
+}
+
+.image-hotspot img {
+    max-width: 100%;
+    box-shadow: 0 0 14px 0 rgb(0, 0, 0, 50%);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    background: #eb0707;
+    cursor: pointer;
+}
+
+.icon::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(1, 1);
+    pointer-events: none;
+    content: "";
+    display: block;
+    width: 26.4px;
+    height: 26.4;
+    border-radius: 100%;
+    border: 1px solid #eb0808;
+    transition: border-color 1s linear;
+    animation: icon-pulse 4s linear infinite;
+}
+
+@keyframes icon-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1, 1);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(1.5, 1.5);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1, 1);
+        opacity: 0;
+    }
+}
+
+.item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.tooltip {
+    position: absolute;
+    padding: 15px;
+    width: 13em;
+    height: 7em;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    line-height: 1.5em;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.1s linear;
+}
+
+.item:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltip h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.top .tooltip {
+    left: calc(50% - 6.5em);
+    bottom: 40px;
+}
+
+.top .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    bottom: -13px;
+    border-top: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    left: calc(50% - 13px);
+}
+
+.bottom .tooltip {
+    left: calc(50% - 6.5em);
+    top: 40px;
+}
+
+.bottom .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    top: -13px;
+    border-bottom: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    left: calc(50% - 13px);
+}
+
+.left .tooltip {
+    bottom: calc(50% - 3.5em);
+    right: 40px;
+}
+
+.left .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    right: -13px;
+    border-left: 13px solid;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    top: calc(50% - 13px);
+}
+
+.right .tooltip {
+    bottom: calc(50% - 3.5em);
+    left: 40px;
+}
+
+.right .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    left: -13px;
+    border-right: 13px solid;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    top: calc(50% - 13px);
+}
+
+@media only screen and (max-width:600px) {
+    h1 {
+        font-size: 2em;
+    }
+}
