@@ -55,7 +55,7 @@ h1 {
     content: "";
     display: block;
     width: 26.4px;
-    height: 26.4;
+    height: 26.4px;
     border-radius: 100%;
     border: 1px solid #eb0808;
     transition: border-color 1s linear;
